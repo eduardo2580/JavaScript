@@ -106,5 +106,11 @@
     "path": "/HarvardCS50Project/index.html",
     "description": "My CS50 Problem Set Solution of a simple homepage that introduces me",
     "category": "webapp"
+  },
+  {
+    "name": "HarvardCS50Trivia",
+    "path": "HarvardCS50Trivia/index.html",
+    "description": "My CS50 Problem Set Soluition of a trivia.",
+    "category": "webapp"
   }
 ]
