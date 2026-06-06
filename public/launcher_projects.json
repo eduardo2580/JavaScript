@@ -100,5 +100,11 @@
     "path": "/SpaceInvaders/index.html",
     "description": "A classic Space Invaders game for players",
     "category": "Game"
+  },
+  {
+    "name": "HarvardCS50Project",
+    "path": "/HarvardCS50Project/index.html",
+    "description": "My CS50 Problem Set Solution of a simple homepage that introduces me",
+    "category": "webapp"
   }
 ]

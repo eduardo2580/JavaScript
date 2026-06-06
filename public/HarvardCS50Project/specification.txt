@@ -1,0 +1,24 @@
+HTML Tags Used:
+1. <nav> - Navigation bar
+2. <div> - Content division
+3. <ul>/<li> - Lists
+4. <button> - Interactive elements
+5. <section> - Page sections
+6. <article> - Self-contained content
+7. <table> - Data tables
+8. <img> - Images
+9. <form> - Contact form
+10. <footer> - Page footer
+
+CSS Properties:
+1. background-color - Page background
+2. box-shadow - Card effects
+3. border-radius - Rounded corners
+4. font-family - Typography
+5. padding/margin - Spacing
+
+JavaScript:
+Used for welcome alert and toggle button to show/hide advanced skills.
+
+Bootstrap:
+Navbar, cards, grid system, and responsive utilities for mobile-first design.
