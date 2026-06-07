@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#game-container {
+    width: 750px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#score-board {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #535353;
+    letter-spacing: 1px;
+    padding: 0 4px 4px;
+}
+
+#hi-score {
+    color: #aaa;
+}
+
+#board {
+    display: block;
+    border-bottom: 2px solid #535353;
+    cursor: pointer;
+    touch-action: none;
+}
+
+@media (max-width: 780px) {
+    #game-container {
+        width: 100vw;
+        padding: 0 8px;
+    }
+}

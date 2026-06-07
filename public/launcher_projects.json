@@ -112,5 +112,11 @@
     "path": "HarvardCS50Trivia/index.html",
     "description": "My CS50 Problem Set Soluition of a trivia.",
     "category": "webapp"
+  },
+  {
+    "name": "Chrome Dinosaur Game",
+    "path": "ChromeDinosaur/index.html",
+    "description": "The classic Chrome Dino Game",
+    "category": "Game"
   }
 ]
