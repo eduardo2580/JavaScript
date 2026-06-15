@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no,shrink-to-fit=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- ── NO CACHE for HTML only (JS/CSS/JSON handled by Service Worker) ── -->
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f0f0f">
+<title>Eduardo.AI</title>
+
+<!-- Cache-bust with timestamp + version to force reload -->
+<link rel="stylesheet" href="css/style.css?v=20260320&t=1">
+</head>
+<body>
+<!-- ── KILL CACHE FIRST ── -->
+<script>
+/* Inline cache-kill: runs before any external resource.
+   Clears SW registrations, Cache Storage, and bfcache. */
+(function(){
+  var ts = Date.now();
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.getRegistrations().then(function(r){
+      r.forEach(function(s){s.unregister();});
+    });
+  }
+  if('caches' in window){
+    caches.keys().then(function(k){
+      k.forEach(function(n){caches.delete(n);});
+    });
+  }
+  /* bfcache bust */
+  window.addEventListener('pageshow',function(e){
+    if(e.persisted){window.location.reload(true);}
+  });
+  /* Expose build stamp for debugging */
+  window.__BUILD = '20260320';
+  window.__LOADED_AT = ts;
+}());
+</script>
+
+<div id="app">
+
+  <header id="header">
+    <div id="hdr-left">
+      <span id="hdr-dot"></span>
+      <span id="hdr-name">Eduardo<span>.AI</span></span>
+    </div>
+    <div id="hdr-right">
+      <div id="status-pill">
+        <span id="status-dot"></span>
+        <span id="status-text">online</span>
+      </div>
+      <div id="lang-bar" role="group" aria-label="Idioma">
+        <button class="lang-btn active" data-lang="pt">PT</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="messages-wrap" role="log" aria-live="polite">
+    <div id="messages"></div>
+    <div id="typing" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+  </main>
+
+  <footer id="input-wrap">
+    <div id="input-row">
+      <span id="input-prompt">&#62;</span>
+      <input id="chat-input" type="text"
+        autocomplete="off" autocorrect="off"
+        autocapitalize="sentences" spellcheck="false"
+        placeholder="mensagem ou código CID (ex: F20)…"
+        aria-label="Mensagem" enterkeyhint="send">
+      <button id="send-btn" disabled aria-label="Enviar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </div>
+    <div id="disc"></div>
+  </footer>
+
+</div>
+
+<!-- All assets loaded with cache-busting timestamps -->
+<script src="js/kb-eduardo.js?v=20260320&t=1"></script>
+<script src="js/kb-direito-brasil.js"></script>
+
+<script src="js/kb-persona.js?v=20260320&t=1"></script>
+<script src="js/kb-finance.js?v=20260328&t=1"></script>
+<script src="js/kb-chemistry.js?v=20260328&t=1"></script>
+<script src="js/kb-dictionary.js?v=20260320&t=1"></script>
+<script src="js/kb-core.js?v=20260320&t=1"></script>
+<script src="js/kb-physics.js?v=20260320&t=1"></script>
+<script src="js/kb-history.js?v=20260320&t=1"></script>
+<script src="js/kb-medicine.js?v=20260320&t=1"></script>
+<script src="js/kb-math.js?v=20260320&t=1"></script>
+<script src="js/chat.js?v=20260320&t=1"></script>
+
+<!-- Register no-cache service worker last -->
+<script>
+(function(){
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('sw.js?t=' + Date.now())
+        .then(function(reg){ reg.update(); })
+        .catch(function(){});
+    });
+  }
+}());
+</script>
+</body>
+</html>

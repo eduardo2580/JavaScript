@@ -1,0 +1,9 @@
+/* SITE */
+
+                            
+Last update: 2026/01/09 YYYY/MM/DD 
+
+                            
+Standards: HTML5, CSS3, JavaScript
+                            
+Software: SVisual Studio Code

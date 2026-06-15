@@ -1,0 +1,24 @@
+# Block all bots from indexing the entire site
+User-agent: *
+Disallow: /
+
+# Block specific bots from indexing specific directories
+User-agent: Googlebot
+Disallow: /imgs/
+Disallow: /js/
+
+User-agent: Baiduspider
+Disallow: /imgs/
+Disallow: /js/
+
+User-agent: bingbot
+Disallow: /imgs/
+Disallow: /js/
+
+User-agent: Yandex
+Disallow: /imgs/
+Disallow: /js/
+
+User-agent: Mojeekbot
+Disallow: /imgs/
+Disallow: /js/

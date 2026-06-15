@@ -118,5 +118,11 @@
     "path": "ChromeDinosaur/index.html",
     "description": "The classic Chrome Dino Game",
     "category": "Game"
+  },
+  {
+    "name": "EduardoAI",
+    "path": "/EduardoAI/index.html",
+    "description": "A simple chat bot",
+    "category": "webapp"
   }
 ]
